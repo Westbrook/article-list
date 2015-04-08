@@ -14,7 +14,8 @@ DB.models.Article = Backbone.Model.extend({
         headline: '',
         url: '',
         date: '',
-        description: ''
+        description: '',
+        current: false
     }
 });
 
@@ -25,13 +26,18 @@ DB.collections.Articles = Backbone.Collection.extend({
         for (var i = 0; i < ct; i++) {
             this.add(dummyPost);
         }
+        this.at(0).set('current', true);
         if (success) success();
     }
 })
 
 DB.views.Article = Backbone.View.extend({
     tagName: "article",
-    className: "list-item",
+    className: function() {
+        var className = "list-item";
+        if (this.model.get('current')) className += " current";
+        return className;
+    },
     template: _.template($('#template-article-list').html()),
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
