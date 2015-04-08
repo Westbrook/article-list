@@ -20,12 +20,16 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <article class="list-item">
-            <img class="img" src="http://cdn.thedailybeast.com/content/dailybeast/articles/2015/04/07/obama-pitched-a-great-iran-deal-in-2013/jcr:content/image.crop.174.116.jpg/1428398108366.cached.jpg"/>
-            <h1 class="h1"><a href="#" title="Blessed is he who">Blessed is he who</a></h1>
-            <h4 class="date">April 7, 2015</h4>
-            <p class="description">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee. </p>
+        <section class="articles">
+
         </article>
+
+        <script id="template-article-list" type="text/x-template">
+            <img class="img" src="<%=image%>" title="<%=headline%>"/>
+            <h1 class="h1"><a href="#" title="<%=headline%>"><%=headline%></a></h1>
+            <h4 class="date"><%=date%></h4>
+            <p class="description"><%=description%></p>
+        </script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
